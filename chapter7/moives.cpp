@@ -3,12 +3,16 @@
 
 using std::cout;using std::endl;
 
+//the distinction of class and struct is only
+//private default and public default
 class movie
 {
 public:
   typedef std::string str;
+  //constructor
   movie() = default;
   movie(str na,float r,str t):name(na),rate(r),ontime(t){};
+  //friend is not declearation
   friend void clear(movie &m);
 
   inline str getName(){
@@ -19,6 +23,7 @@ public:
     return rate;
   }
 
+//this is a pointer to object, generating automatically
   movie &modifyName(str na)
   {
     name = na;
@@ -31,6 +36,7 @@ private:
   str ontime = "";
 
 };
+//friend can use private menber
 void clear(movie &m)
 {
   m.name = "None";
