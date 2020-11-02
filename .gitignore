@@ -1,0 +1,4 @@
+*/build/
+build/*
+.vscode
+leetcode/word_break/build/*
